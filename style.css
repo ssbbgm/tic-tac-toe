@@ -1,8 +1,8 @@
 :root {
-    --cell-size: 100px;
+    --cell-size: 200px;
     --color: #81c3fd;
     --color-set: #0275d8;
-    --line: 10px;
+    --line: 20px;
 }
 
 body {

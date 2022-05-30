@@ -3,7 +3,7 @@ const cellElements = document.querySelectorAll('[data-cell]');
 const boardElement = document.getElementById('board');
 const winningMessageElement = document.getElementById('winningMessage');
 const restartButton = document.getElementById('restartButton');
-const winningMessageTextElement = document.getElementById('winnngMessageText')
+const winningMessageTextElement = document.getElementById('winningMessageText')
 
 let isPlayer_O_Turn = false;
 
@@ -42,7 +42,7 @@ function handleCellClick (element){
     const cell = element.target;
     const currentClass = isPlayer_O_Turn ? PLAYER_O_CLASS : PLAYER_X_CLASS;
     placeMark(cell, currentClass);
-    if(checkWin(currentClass)){
+    if (checkWin(currentClass)){
         endGame(false);
     } else if (isDraw()){
         endGame(true);
