@@ -116,3 +116,7 @@ body {
     color: white;
     border-color: white;
 }
+
+.winning-message.show {
+    display: flex;
+}
