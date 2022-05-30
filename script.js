@@ -37,3 +37,27 @@ function startGame(){
     setBoardHoverClass();
     winningMessageElement.classList.remove('show')
 };
+
+
+function handleCellClick (element){
+    const cell = element.target;
+    const currentClass = isPlayer_O_Turn ? PLAYER_O_CLASS : PLAYER_X_CLASS;
+    placeMark(cell, currentClass);
+    if(checkWin(currentClass)){
+        endGame(false);
+    } else if (isDraw()){
+        endGame(true);
+    } else {
+        swapTurns();
+        setBoardHoverClass();
+    }
+};
+
+function endGame(draw) {
+    if(draw){
+        winningMessageTextElement.innerText = 'It\'s a draw';
+    } else {
+        winningMessageTextElement.innerText = `Player ${isPlayer_O_Turn ? "O" : "X"} wins!`
+    }
+    winningMessageElement.classList.add('show')
+}
